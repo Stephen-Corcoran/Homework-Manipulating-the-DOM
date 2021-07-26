@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const newFilmDetails = document.querySelector('#new-film-details');
-    newFilmDetails.addEventListener('sumbit', handleNewFilmDetailsSubmit);
+    newFilmDetails.addEventListener('submit', handleNewFilmDetailsSubmit);
 
-    // const deleteAllButton = document.querySelector('#delete-all');
-    // deleteAllButton.addEventListener('click', handleDeleteAllButton);
+    const deleteAllButton = document.querySelector('#delete-all');
+    deleteAllButton.addEventListener('click', handleDeleteAllButton);
 })
 
 const handleNewFilmDetailsSubmit = function (event) {
@@ -19,7 +19,7 @@ const handleNewFilmDetailsSubmit = function (event) {
 }
 
 const creatFilmListItem = function (form) {
-    const filmListItem = document.createElement('li');
+    const filmListItem = document.createElement('p');
     filmListItem.classList.add('film-list-item');
 
     const title = document.createElement('h2');
@@ -38,14 +38,14 @@ const creatFilmListItem = function (form) {
     genre.textContent = form.genre.value;
     filmListItem.appendChild(genre);
 
-    const synopsis = document.createElement('h3');
+    const synopsis = document.createElement('p');
     synopsis.textContent = form.synopsis.value;
     filmListItem.appendChild(synopsis);
 
     return filmListItem;
 }
 
-// const handleDeleteAllButton = function(event) {
-//     const filmList = document.querySelector('#film-list');
-//     filmList.innerHTML = '';
-// }
+const handleDeleteAllButton = function(event) {
+    const filmList = document.querySelector('#film-list');
+    filmList.innerHTML = '';
+}
